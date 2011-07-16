@@ -105,3 +105,7 @@ inoremap jj <ESC>
 
 " mustang ftw!
 color mustang
+
+" 플러그인 커맨드들
+" Ack
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
