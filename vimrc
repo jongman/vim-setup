@@ -78,3 +78,6 @@ nnoremap <C-l> <C-w>l
 
 " 기타 리매핑들
 inoremap jj <ESC>
+
+" mustang ftw!
+color mustang
