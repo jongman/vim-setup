@@ -105,6 +105,10 @@ nnoremap <leader>sv :so $MYVIMRC<CR>
 nnoremap <leader>v V`]
 " 세로 스플릿하고 그리로 가기
 nnoremap <leader>w <C-w>v<C-w>l
+" 가로 스플릿하고 그리로 가기
+nnoremap <leader>e <C-w>s<C-w>j
+" 스플릿 닫기
+nnoremap <leader>q <C-w>q
 " 스플릿 사이 옮겨다니기
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
