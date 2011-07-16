@@ -13,3 +13,6 @@
 [submodule "vim/bundle/pyflakes"]
 	path = vim/bundle/pyflakes
 	url = https://github.com/kevinw/pyflakes-vim.git
+[submodule "vim/bundle/markdown"]
+	path = vim/bundle/markdown
+	url = git://github.com/hallison/vim-markdown.git
