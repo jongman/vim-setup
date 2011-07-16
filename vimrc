@@ -122,6 +122,7 @@ color mustang
 
 " Ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+map <leader> a :Ack 
 
 " Yankring
 nnoremap <silent> <F3> :YRShow<cr>
