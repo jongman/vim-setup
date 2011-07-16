@@ -29,7 +29,7 @@ set pastetoggle=<F12>
 au FocusLost * :wa
 " 필요없는 공백을 하이라이트
 set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set listchars=tab:»·,trail:·,extends:#,nbsp:·
 " 파일 인코딩은 언제나 utf-8. 안되면 cp949 시도
 set encoding=utf8
 set fileencodings=utf8,cp949
@@ -52,6 +52,9 @@ set hidden " 버퍼가 안보이게 되면 변경 내용 버리기.
 set wildmenu " 자동완성시 리스트를 보여준다
 set wildmode=list:longest,full
 set whichwrap=b,s,h,l,<,>,[,] " 줄 끝에서 다음 줄로 넘어가기 위해 사용할 수 있는 키들
+set lazyredraw " 매크로 수행중 다시 그리기 없기
+set history=1000 " 기억 많이 하면 좋지
+set undolevels=1000 " 이것도 많이 기억하도록
 
 " 난 , 리더키로 쓰는거 정말 싫음. 나만 그런가. -_-;
 let mapleader = "\\"
@@ -71,6 +74,8 @@ nnoremap Y y$
 " visual mode 내에서 시프트해도 나가지 않기 (!)
 vnoremap < <gv
 vnoremap > >gv
+" F2 로 라인 넘버 토글
+nnoremap <F2> :set nonumber!<CR> 
 
 " autocmds
 " ========
