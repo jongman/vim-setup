@@ -19,21 +19,17 @@ set gdefault " 기본으로 한 줄에서 여러개도 replace
 set incsearch
 set showmatch
 set hlsearch " 검색 결과를 하이라이트한다.
-nmap <silent> <leader><space> :nohlsearch<cr>
-" 탭으로 matching brackets 사이를 오가기
-nnoremap <tab> %
-vnoremap <tab> %
 " 라인 랩 관련 설정
 set wrap
 set textwidth=0 " 니맘대로 줄바꿈하지마 ㄱㅅㄲ야
-nnoremap j gj
-nnoremap k gk
-" : 대신 ; 를 치자
-nnoremap ; :
 " 인덴트. ai 만 우선 켠다.
 set autoindent
+set pastetoggle=<F12>
 " 포커스를 잃으면 자동 세이브
 au FocusLost * :wa
+" 필요없는 공백을 하이라이트
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
 " 파일 인코딩은 언제나 utf-8. 안되면 cp949 시도
 set encoding=utf8
 set fileencodings=utf8,cp949
@@ -60,8 +56,31 @@ set whichwrap=b,s,h,l,<,>,[,] " 줄 끝에서 다음 줄로 넘어가기 위해 
 " 난 , 리더키로 쓰는거 정말 싫음. 나만 그런가. -_-;
 let mapleader = "\\"
 
-" 리더 커맨드들
+" 키보드 매핑
+" ===========
 
+" 탭으로 matching brackets 사이를 오가기
+nnoremap <tab> %
+vnoremap <tab> %
+nnoremap j gj
+nnoremap k gk
+" : 대신 ; 를 치자
+nnoremap ; :
+" 줄끝까지 복사
+nnoremap Y y$
+" visual mode 내에서 시프트해도 나가지 않기 (!)
+vnoremap < <gv
+vnoremap > >gv
+
+" autocmds
+" ========
+" 이 파일 타입들에서는 trailing space 를 자동으로 지워준다
+autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+
+" 리더 커맨드들
+" =============
+
+nmap <silent> <leader><space> :nohlsearch<cr>
 " trailing space 전부 없애기: leaderW
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " 이 파일 설정하는거 돕기 ㅋ
