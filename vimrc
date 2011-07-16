@@ -1,6 +1,5 @@
 " vi 호환성 버리기
-set nocompatible
-
+set nocompatible 
 " pathogen 을 이용해 다른 플러그인들을 로드한다
 filetype off
 call pathogen#runtime_append_all_bundles()
@@ -21,12 +20,20 @@ set showmatch
 set hlsearch " 검색 결과를 하이라이트한다.
 map N Nzz " 검색 결과를 화면 가운데로!
 map n nzz
+" 탭 내비게이션
+set showtabline=2 " 탭 언제나 보여주기
+map <F9> :tabnew<CR>
+map <F10> :tabclose<CR>
+map <F11> :tabprevious<CR>
+map <F12> :tabnext<CR>
+map <C-t> :tabnew<CR>
+map <C-w> :tabclose<CR>
 " 라인 랩 관련 설정
 set wrap
 set textwidth=0 " 니맘대로 줄바꿈하지마 ㄱㅅㄲ야
 " 인덴트. ai 만 우선 켠다.
 set autoindent
-set pastetoggle=<F12>
+set pastetoggle=<F8>
 " 포커스를 잃으면 자동 세이브
 au FocusLost * :wa
 " 필요없는 공백을 하이라이트
