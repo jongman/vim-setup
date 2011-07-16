@@ -16,3 +16,6 @@
 [submodule "vim/bundle/markdown"]
 	path = vim/bundle/markdown
 	url = git://github.com/hallison/vim-markdown.git
+[submodule "vim/bundle/argtextobj"]
+	path = vim/bundle/argtextobj
+	url = git://github.com/vim-scripts/argtextobj.vim.git
