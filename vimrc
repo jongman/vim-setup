@@ -107,5 +107,11 @@ inoremap jj <ESC>
 color mustang
 
 " 플러그인 커맨드들
+" =================
+
 " Ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
+" Yankring
+nnoremap <silent> <F3> :YRShow<cr>
+inoremap <silent> <F3> <ESC>:YRShow<cr>
