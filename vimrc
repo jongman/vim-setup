@@ -45,7 +45,7 @@ set ttyfast " 느리지 않아요 로컬이에요
 set ruler " 커서 위치 보여주세요
 set backspace=indent,eol,start " 백스페이스 설정
 set mouse=a " 마우스 지원
-set autochdir " 파일 열면 해당 디렉토리로 chdir
+"set autochdir " 파일 열면 해당 디렉토리로 chdir. cmd-t 랑 잘 안맞는당
 set showmode " 현재 상태 (insert/visualize) 표시.. 이거 디폴트로 안켜있나?
 set showcmd " 현재 명령어 (ex 모드) 표시
 set hidden " 버퍼가 안보이게 되면 변경 내용 버리기.
