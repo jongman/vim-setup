@@ -19,6 +19,8 @@ set gdefault " 기본으로 한 줄에서 여러개도 replace
 set incsearch
 set showmatch
 set hlsearch " 검색 결과를 하이라이트한다.
+map N Nzz " 검색 결과를 화면 가운데로!
+map n nzz
 " 라인 랩 관련 설정
 set wrap
 set textwidth=0 " 니맘대로 줄바꿈하지마 ㄱㅅㄲ야
@@ -35,6 +37,7 @@ set encoding=utf8
 set fileencodings=utf8,cp949
 syntax on " 구문강조
 set laststatus=2 " 상태라인 항상 보여주세요
+set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 set number " 줄번호 보여 주세여!
 "set relativenumber " 절대 줄번호는 중요하지 않아요
 set scrolljump=1 " 스크롤은 1줄씩만
