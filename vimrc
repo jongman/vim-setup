@@ -89,8 +89,6 @@ nnoremap <F2> :set nonumber!<CR>
 " ========
 " 이 파일 타입들에서는 trailing space 를 자동으로 지워준다
 autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType python set expandtab
 
 " 리더 커맨드들
 " =============
@@ -116,6 +114,11 @@ nnoremap <C-l> <C-w>l
 
 " 기타 리매핑들
 inoremap jj <ESC>
+
+" 현재 디렉토리에서 열기
+map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+map ,t :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map ,s :split <C-R>=expand("%:p:h") . "/" <CR>
 
 " mustang ftw!
 color mustang
