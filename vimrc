@@ -9,7 +9,6 @@ filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set expandtab
 
 " 검색 설정
 set ignorecase " 대소문자 무시하지만..
@@ -27,7 +26,6 @@ map <F10> :tabclose<CR>
 map <F11> :tabprevious<CR>
 map <F12> :tabnext<CR>
 map <C-t> :tabnew<CR>
-map <C-w> :tabclose<CR>
 " 라인 랩 관련 설정
 set wrap
 set textwidth=0 " 니맘대로 줄바꿈하지마 ㄱㅅㄲ야
@@ -92,6 +90,7 @@ nnoremap <F2> :set nonumber!<CR>
 " 이 파일 타입들에서는 trailing space 를 자동으로 지워준다
 autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python set expandtab
 
 " 리더 커맨드들
 " =============
@@ -123,6 +122,9 @@ color mustang
 
 " 플러그인 커맨드들
 " =================
+
+" Command-T: 다음 파일들은 무시해주세요
+set wildignore=*.pyc,*.o,*.out,*.png
 
 " Ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"

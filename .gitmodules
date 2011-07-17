@@ -19,3 +19,6 @@
 [submodule "vim/bundle/argtextobj"]
 	path = vim/bundle/argtextobj
 	url = git://github.com/vim-scripts/argtextobj.vim.git
+[submodule "vim/bundle/substitute"]
+	path = vim/bundle/substitute
+	url = https://github.com/aklt/vim-substitute.git
