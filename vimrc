@@ -13,7 +13,6 @@ set softtabstop=4
 " 검색 설정
 set ignorecase " 대소문자 무시하지만..
 set smartcase " 검색어에 대소문자 섞여 있는 경우엔 존중해드림
-set gdefault " 기본으로 한 줄에서 여러개도 replace
 set incsearch
 set showmatch
 set hlsearch " 검색 결과를 하이라이트한다.
