@@ -20,11 +20,10 @@ map N Nzz " 검색 결과를 화면 가운데로!
 map n nzz
 " 탭 내비게이션
 set showtabline=2 " 탭 언제나 보여주기
-map <F9> :tabnew<CR>
-map <F10> :tabclose<CR>
-map <F11> :tabprevious<CR>
-map <F12> :tabnext<CR>
 map <C-t> :tabnew<CR>
+map <tab> :tabnext<CR>
+map <S-tab> :tabprevious<CR>
+map <C-w> :tabclose<CR>
 " 라인 랩 관련 설정
 set wrap
 set textwidth=0 " 니맘대로 줄바꿈하지마 ㄱㅅㄲ야
@@ -70,7 +69,6 @@ let mapleader = "\\"
 " ===========
 
 " 탭으로 matching brackets 사이를 오가기
-nnoremap <tab> %
 vnoremap <tab> %
 nnoremap j gj
 nnoremap k gk
