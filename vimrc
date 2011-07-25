@@ -91,6 +91,9 @@ autocmd FileType c,cpp,js set expandtab
 " 리더 커맨드들
 " =============
 
+" 파일 전체 다시 인덴팅하기
+nmap <silent> <leader><tab> mzgg=G`z
+" 서치 하이라이트 없애기
 nmap <silent> <leader><space> :nohlsearch<cr>
 " trailing space 전부 없애기: leaderW
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
