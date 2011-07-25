@@ -10,10 +10,16 @@ snippet rep
 snippet for
 	for(int ${1:i} = ${2:0}; $1 < ${3:n}; ++$1) ${4}
 snippet {
-	{\n
+	{
 		${1}
 	}
 snippet repsz
 	for(int ${1:i} = 0; $1 < ${2:arr}.size(); ++$1) ${3}
 snippet forsz
 	for(int ${1:i} = ${2:0}; $1 < ${3:arr}.size(); ++$1) ${4}
+snippet pb
+	push_back(${1});${2}
+snippet sz
+	size()
+snippet sz;
+	size();
