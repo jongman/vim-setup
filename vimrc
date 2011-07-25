@@ -44,7 +44,7 @@ syntax on " 구문강조
 set laststatus=2 " 상태라인 항상 보여주세요
 set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 set number " 줄번호 보여 주세여!
-"set relativenumber " 절대 줄번호는 중요하지 않아요
+set relativenumber " 절대 줄번호는 중요하지 않아요
 set scrolljump=1 " 스크롤은 1줄씩만
 set scrolloff=3 " 3줄 남기고 스크롤 설정
 set visualbell " 비주얼 벨 써야지여
