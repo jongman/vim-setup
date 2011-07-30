@@ -33,7 +33,7 @@ set pastetoggle=<F8>
 " 포커스를 잃으면 자동 세이브
 au FocusLost * :wa
 " 필요없는 공백을 하이라이트
-set list
+"set list
 set listchars=tab:»·,trail:·,extends:#,nbsp:·
 " 파일 인코딩은 언제나 utf-8. 안되면 cp949 시도
 set encoding=utf8
@@ -137,6 +137,7 @@ nnoremap <leader>a :Ack
 " Yankring
 nnoremap <silent> <F3> :YRShow<cr>
 inoremap <silent> <F3> <ESC>:YRShow<cr>
+let g:yankring_history_dir='~/.vim'
 
 " bufexplorer
 map <leader>o :BufExplorer<CR>
