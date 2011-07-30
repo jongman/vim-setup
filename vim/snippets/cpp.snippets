@@ -27,3 +27,11 @@ snippet sz;
 	size();
 snippet ll
 	long long${1}
+snippet ALL
+	${1:container}.begin(), $1.end()${2}
+snippet UNIQ
+	${1:container}.erase(unique($1.begin(), $1.end()), $1.end());${2}
+snippet CLEAR
+	memset(${1:array}, ${2:width}, sizeof($1));
+snippet iss
+	istringstream
