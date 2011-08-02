@@ -115,7 +115,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " 기타 리매핑들
-inoremap jj <ESC>
+"inoremap jj <ESC>
 
 " 현재 디렉토리에서 열기
 map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
@@ -144,6 +144,8 @@ let g:yankring_history_dir='~/.vim'
 map <leader>o :BufExplorer<CR>
 
 " NERDTree
+let NERDTreeChDirMode=0
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.out$', '\.swp$']
 let NERDTreeShowBookmarks=1
-map <F4> :NERDTreeToggle<CR>
+map <F4> :NERDTreeFind<CR>
+map <F5> :NERDTreeClose<CR>
