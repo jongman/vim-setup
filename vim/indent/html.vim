@@ -76,7 +76,6 @@ call <SID>HtmlIndentPush('noscript')
 call <SID>HtmlIndentPush('object')
 call <SID>HtmlIndentPush('ol')
 call <SID>HtmlIndentPush('optgroup')
-call <SID>HtmlIndentPush('p')
 " call <SID>HtmlIndentPush('pre')
 call <SID>HtmlIndentPush('q')
 call <SID>HtmlIndentPush('s')
@@ -96,6 +95,13 @@ call <SID>HtmlIndentPush('tt')
 call <SID>HtmlIndentPush('u')
 call <SID>HtmlIndentPush('ul')
 call <SID>HtmlIndentPush('var')
+
+" My additions
+
+call <SID>HtmlIndentPush('p')
+call <SID>HtmlIndentPush('li')
+call <SID>HtmlIndentPush('dd')
+call <SID>HtmlIndentPush('dt')
 
 " HTML5 elements
 call<SID>HtmlIndentPush('article')
