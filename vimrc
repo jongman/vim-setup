@@ -75,7 +75,7 @@ set foldlevel=999 " 처음엔 폴드하지마요
 " ===========
 
 " 탭으로 matching brackets 사이를 오가기
-vnoremap <tab> %
+"vnoremap <tab> %
 nnoremap j gj
 nnoremap k gk
 " : 대신 ; 를 치자
