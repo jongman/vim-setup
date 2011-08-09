@@ -66,6 +66,11 @@ set undolevels=1000 " 이것도 많이 기억하도록
 " 난 , 리더키로 쓰는거 정말 싫음. 나만 그런가. -_-;
 let mapleader = "\\"
 
+" 폴드 
+" ====
+set foldmethod=syntax " 문법 기반 폴딩
+set foldlevel=999 " 처음엔 폴드하지마요
+
 " 키보드 매핑
 " ===========
 
