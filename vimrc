@@ -86,7 +86,7 @@ nnoremap Y y$
 vnoremap < <gv
 vnoremap > >gv
 " F2 로 라인 넘버 토글
-nnoremap <F2> :set nonumber!<CR> 
+nnoremap <F2> :set relativenumber!<CR> 
 
 " autocmds
 " ========
