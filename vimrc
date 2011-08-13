@@ -87,6 +87,10 @@ vnoremap < <gv
 vnoremap > >gv
 " F2 로 라인 넘버 토글
 nnoremap <F2> :set relativenumber!<CR> 
+" copy and paste to/from system clipboard!
+vmap <C-c> y: call system("xclip -i -selection clipboard", getreg("\""))<CR>
+nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>
+imap <C-v> <Esc><C-v>a
 
 " autocmds
 " ========
