@@ -35,15 +35,15 @@ set pastetoggle=<F8>
 au FocusLost * :wa
 " 필요없는 공백을 하이라이트
 "set list
-set listchars=tab:»·,trail:·,extends:#,nbsp:·
+"set listchars=tab:»·,trail:·,extends:#,nbsp:·
 " 파일 인코딩은 언제나 utf-8. 안되면 cp949 시도
 set encoding=utf8
 set fileencodings=utf8,cp949
 syntax on " 구문강조
 set laststatus=2 " 상태라인 항상 보여주세요
-set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
+set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ %{fugitive#statusline()}\ [%l,%v][%p%%]
 set number " 줄번호 보여 주세여!
-set relativenumber " 절대 줄번호는 중요하지 않아요
+set number " 절대 줄번호는 중요하지 않아요
 set scrolljump=1 " 스크롤은 1줄씩만
 set scrolloff=3 " 3줄 남기고 스크롤 설정
 set visualbell " 비주얼 벨 써야지여
@@ -86,12 +86,12 @@ nnoremap Y y$
 vnoremap < <gv
 vnoremap > >gv
 " F2 로 라인 넘버 토글
-nnoremap <F2> :set relativenumber!<CR> 
+nnoremap <F2> :set number!<CR> 
 
 " autocmds
 " ========
 " 이 파일 타입들에서는 trailing space 를 자동으로 지워준다
-autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+" autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 autocmd FileType c,cpp,js set expandtab
 
 " 리더 커맨드들
@@ -118,6 +118,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <C-l> <C-w>l
+nnoremap <leader>= <C-w>=
 
 " 기타 리매핑들
 "inoremap jj <ESC>
@@ -139,6 +141,7 @@ set wildignore=*.pyc,*.o,*.out,*.png
 " Ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nnoremap <leader>a :Ack 
+nnoremap <leader>A :Ack <C-R><C-W><CR>
 
 " Yankring
 nnoremap <silent> <F3> :YRShow<cr>
