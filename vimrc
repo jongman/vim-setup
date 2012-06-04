@@ -135,8 +135,9 @@ color mustang
 " 플러그인 커맨드들
 " =================
 
-" Command-T: 다음 파일들은 무시해주세요
+" CtrlP
 set wildignore=*.pyc,*.o,*.out,*.png
+nnoremap <leader>t :CtrlP<CR>
 
 " Ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
