@@ -85,8 +85,18 @@ nnoremap Y y$
 " visual mode 내에서 시프트해도 나가지 않기 (!)
 vnoremap < <gv
 vnoremap > >gv
-" F2 로 라인 넘버 토글
-nnoremap <F2> :set number!<CR> 
+" Toggle mouse/line number
+function! ToggleMouse() 
+	if &mouse == 'a'
+		set mouse=
+		echo 'Ready for copy'
+	else
+		set mouse=a
+		echo 'Out of copy mode'
+	endif
+	set number!
+endfunction
+noremap <F2> :call ToggleMouse()<CR>
 
 " autocmds
 " ========
@@ -165,3 +175,4 @@ nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gp :Gpush<CR>
+
