@@ -30,6 +30,6 @@
 * F5: NerdTree 닫기
 * Ctrl-P/Ctrl-N: YankRing. 붙여넣은 뒤 붙여넣은 레지스터 바꾸기
 * \\a: Ack
-* \\t: Command-t
+* \\t: Ctrl-P
 * \\o: bufexplorer
 
