@@ -1,6 +1,6 @@
 [submodule "vim/bundle/yankring"]
 	path = vim/bundle/yankring
-	url = git://github.com/vim-scripts/YankRing.vim.git
+	url = https://github.com/vim-scripts/YankRing.vim
 [submodule "vim/bundle/pyflakes"]
 	path = vim/bundle/pyflakes
 	url = https://github.com/kevinw/pyflakes-vim.git
