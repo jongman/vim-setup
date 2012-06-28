@@ -35,15 +35,15 @@ set pastetoggle=<F8>
 au FocusLost * :wa
 " 필요없는 공백을 하이라이트
 "set list
-set listchars=tab:»·,trail:·,extends:#,nbsp:·
+"set listchars=tab:»·,trail:·,extends:#,nbsp:·
 " 파일 인코딩은 언제나 utf-8. 안되면 cp949 시도
 set encoding=utf8
 set fileencodings=utf8,cp949
 syntax on " 구문강조
 set laststatus=2 " 상태라인 항상 보여주세요
-set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
+set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ %{fugitive#statusline()}\ [%l,%v][%p%%]
 set number " 줄번호 보여 주세여!
-set relativenumber " 절대 줄번호는 중요하지 않아요
+set number " 절대 줄번호는 중요하지 않아요
 set scrolljump=1 " 스크롤은 1줄씩만
 set scrolloff=3 " 3줄 남기고 스크롤 설정
 set visualbell " 비주얼 벨 써야지여
@@ -85,8 +85,6 @@ nnoremap Y y$
 " visual mode 내에서 시프트해도 나가지 않기 (!)
 vnoremap < <gv
 vnoremap > >gv
-" F2 로 라인 넘버 토글
-nnoremap <F2> :set relativenumber!<CR> 
 " copy and paste to/from system clipboard!
 vmap <C-c> y: call system("xclip -i -selection clipboard", getreg("\""))<CR>
 nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>
@@ -95,7 +93,7 @@ imap <C-v> <Esc><C-v>a
 " autocmds
 " ========
 " 이 파일 타입들에서는 trailing space 를 자동으로 지워준다
-autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+" autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 autocmd FileType c,cpp,js set expandtab
 
 " 리더 커맨드들
@@ -122,6 +120,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <C-l> <C-w>l
+nnoremap <leader>= <C-w>=
 
 " 기타 리매핑들
 "inoremap jj <ESC>
@@ -137,12 +137,14 @@ color mustang
 " 플러그인 커맨드들
 " =================
 
-" Command-T: 다음 파일들은 무시해주세요
+" CtrlP
 set wildignore=*.pyc,*.o,*.out,*.png
+nnoremap <leader>t :CtrlP<CR>
 
 " Ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nnoremap <leader>a :Ack 
+nnoremap <leader>A :Ack <C-R><C-W><CR>
 
 " Yankring
 nnoremap <silent> <F3> :YRShow<cr>
@@ -158,3 +160,11 @@ let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.out$', '\.swp$']
 let NERDTreeShowBookmarks=1
 map <F4> :NERDTreeFind<CR>
 map <F5> :NERDTreeClose<CR>
+
+" Fugitive
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gl :Glog<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gp :Gpush<CR>
+
