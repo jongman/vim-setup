@@ -85,18 +85,10 @@ nnoremap Y y$
 " visual mode 내에서 시프트해도 나가지 않기 (!)
 vnoremap < <gv
 vnoremap > >gv
-" Toggle mouse/line number
-function! ToggleMouse() 
-	if &mouse == 'a'
-		set mouse=
-		echo 'Ready for copy'
-	else
-		set mouse=a
-		echo 'Out of copy mode'
-	endif
-	set number!
-endfunction
-noremap <F2> :call ToggleMouse()<CR>
+" copy and paste to/from system clipboard!
+vmap <C-c> y: call system("xclip -i -selection clipboard", getreg("\""))<CR>
+nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>
+imap <C-v> <Esc><C-v>a
 
 " autocmds
 " ========
