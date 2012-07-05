@@ -141,6 +141,7 @@ color mustang
 set wildignore=*.pyc,*.o,*.out,*.png
 nnoremap <leader>t :CtrlP<CR>
 let g:ctrlp_map = '<leader>t'
+let g:ctrlp_working_path_mode = 0
 
 " Ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
