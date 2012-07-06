@@ -170,3 +170,15 @@ nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gp :Gpush<CR>
 
+nnoremap <F2> :call ToggleMouse()<CR>
+function! ToggleMouse()
+  if &mouse == 'a'
+	set nonu
+    set mouse=
+    echo "Mouse usage disabled"
+  else
+	set nu
+    set mouse=a
+    echo "Mouse usage enabled"
+  endif
+endfunction
