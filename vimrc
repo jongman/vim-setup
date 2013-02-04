@@ -144,7 +144,7 @@ let g:ctrlp_map = '<leader>t'
 let g:ctrlp_working_path_mode = 0
 
 " Ack
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+let g:ackprg="ack-grep -H --nocolor --nogroup --column --nojs"
 nnoremap <leader>a :Ack 
 nnoremap <leader>A :Ack <C-R><C-W><CR>
 
@@ -171,6 +171,7 @@ nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gp :Gpush<CR>
 
 nnoremap <F2> :call ToggleMouse()<CR>
+nnoremap <F3> :set wrap!<CR>
 function! ToggleMouse()
   if &mouse == 'a'
 	set nonu
@@ -182,3 +183,18 @@ function! ToggleMouse()
     echo "Mouse usage enabled"
   endif
 endfunction
+
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy?<C-R><C-R>=substitute(
+  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+
+silent !stty -ixon > /dev/null 2> /dev/null
+nnoremap <C-q> :qa<CR>
