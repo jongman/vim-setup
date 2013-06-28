@@ -198,3 +198,6 @@ vnoremap <silent> # :<C-U>
 
 silent !stty -ixon > /dev/null 2> /dev/null
 nnoremap <C-q> :qa<CR>
+
+let g:gitgutter_enabled = 0
+nnoremap <leader>gg :GitGutterToggle<CR>
